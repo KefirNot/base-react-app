@@ -1,20 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Comp } from './component';
 import { AppContainer } from 'react-hot-loader';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+import App from './component';
+import reducer from './reducer';
+
+const store = createStore(reducer);
 
 const render = Component => {
 	ReactDOM.render(
-		<AppContainer>
-			<Component />
-		</AppContainer>,
+		<Provider store={store}>
+			<AppContainer>
+				<Component />
+			</AppContainer>
+		</Provider>,
 		document.getElementById('root')
 	);
 };
 
-render(Comp);
+render(App);
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
-	module.hot.accept('./component', () => { render(Comp); });
+	module.hot.accept('./component', () => { render(App); });
 }
