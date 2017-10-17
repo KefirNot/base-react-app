@@ -5,7 +5,7 @@ module.exports = {
 	entry: [
 		'babel-polyfill',
 		'react-hot-loader/patch',
-		'./src/index.js',
+		'./src/index.jsx',
 	],
 	output: {
 		path: path.resolve('public'),
@@ -28,6 +28,9 @@ module.exports = {
 				]
 			}
 		],
+	},
+	resolve: {
+		extensions: ['.js', '.jsx'],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({ template: './src/index.html', filename: 'index.html', inject: 'body' }),
