@@ -1,8 +1,10 @@
 import React from 'react';
+import { A } from './a';
 
-export class Component extends React.Component {
+export class Comp extends React.Component {
 	render() {
-		var title = 'It works!!!';
-		return <div>{title}</div>;
+		console.log('updating...');
+		var title = 'It worksssssss!!!';
+		return <div>{title}<A /></div>;
 	}
 }
