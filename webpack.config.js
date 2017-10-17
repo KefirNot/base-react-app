@@ -14,15 +14,22 @@ module.exports = {
 	devtool: 'source-map',
 	module: {
 		loaders: [
-			{ test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-			{ test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-		]
+			{
+				test: /\.(js|jsx)$/,
+				loader: 'babel-loader',
+				exclude: /node_modules/
+			},
+			{
+				test: /\.scss$/,
+				use: [
+					{ loader: 'style-loader' },
+					{ loader: 'css-loader' },
+					{ loader: 'sass-loader' }
+				]
+			}
+		],
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			template: './src/index.html',
-			filename: 'index.html',
-			inject: 'body'
-		}),
+		new HtmlWebpackPlugin({ template: './src/index.html', filename: 'index.html', inject: 'body' }),
 	],
 };
