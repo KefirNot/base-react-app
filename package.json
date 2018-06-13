@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server  --hot --history-api-fallback --open --config ./config/webpack.config.js",
-    "build": "webpack -p --config ./config/webpack.config.js"
+    "dev": "webpack-dev-server  --hot --history-api-fallback --open",
+    "build": "webpack -p"
   },
   "author": "",
   "license": "ISC",
