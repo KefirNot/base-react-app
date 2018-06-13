@@ -1,4 +1,4 @@
-import * as actions from './actions.js';
+import * as actions from 'store/actions.js';
 
 const initialState = {
 	data: [

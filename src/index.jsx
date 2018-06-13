@@ -4,8 +4,8 @@ import { AppContainer } from 'react-hot-loader';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import App from './component';
-import reducer from './reducer';
+import App from './app';
+import reducer from 'store/reducer';
 
 const store = createStore(reducer);
 
@@ -24,5 +24,5 @@ render(App);
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
-	module.hot.accept('./component', () => { render(App); });
+	module.hot.accept('./app', () => { render(App); });
 }

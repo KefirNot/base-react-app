@@ -31,10 +31,16 @@ module.exports = {
 		],
 	},
 	resolve: {
+		alias: {
+			helpers: path.resolve('src/helpers'),
+			components: path.resolve('src/components'),
+			blocks: path.resolve('src/blocks'),
+			store: path.resolve('src/store'),
+		},
 		extensions: ['.js', '.jsx'],
 	},
 	plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html', filename: 'index.html', inject: 'body' }),
-        new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }]),
+		new HtmlWebpackPlugin({ template: './src/index.html', filename: 'index.html', inject: 'body' }),
+		new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }]),
 	],
 };
