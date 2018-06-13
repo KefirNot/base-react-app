@@ -5,15 +5,15 @@ import SearchBox from 'components/searchBox';
 import DataList from 'components/dataList';
 
 class CarSearch extends React.Component {
-	render() {
-		return (
-			<div>
-				<h3>Japan cars</h3>
-				<SearchBox {...this.props} />
-				<DataList {...this.props} />
-			</div>
-		);
-	}
+    render() {
+        return (
+            <div>
+                <h3>Japan cars</h3>
+                <SearchBox {...this.props} />
+                <DataList {...this.props} />
+            </div>
+        );
+    }
 }
 
 export default connect(state => state)(CarSearch);

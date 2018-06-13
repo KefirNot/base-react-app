@@ -10,19 +10,19 @@ import reducer from 'store/reducer';
 const store = createStore(reducer);
 
 const render = Component => {
-	ReactDOM.render(
-		<Provider store={store}>
-			<AppContainer>
-				<Component />
-			</AppContainer>
-		</Provider>,
-		document.getElementById('root')
-	);
+    ReactDOM.render(
+        <Provider store={store}>
+            <AppContainer>
+                <Component />
+            </AppContainer>
+        </Provider>,
+        document.getElementById('root')
+    );
 };
 
 render(App);
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
-	module.hot.accept('./app', () => { render(App); });
+    module.hot.accept('./app', () => { render(App); });
 }
