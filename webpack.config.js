@@ -21,7 +21,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.scss$/,
+                test: /\.(css|scss)$/,
                 use: [
                     { loader: 'style-loader' },
                     { loader: 'css-loader' },
@@ -40,7 +40,12 @@ module.exports = {
         extensions: ['.js', '.jsx'],
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html', filename: 'index.html', inject: 'body' }),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            filename: 'index.html',
+            title: 'React example',
+            meta: { viewport: 'width=device-width, initial-scale=1' }
+        }),
         new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }]),
     ],
 };
