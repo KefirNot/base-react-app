@@ -1,5 +1,4 @@
-configured 
--eslint
+just configured webpack app
 -webpack
 -babel
 -scss
